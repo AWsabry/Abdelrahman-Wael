@@ -32,14 +32,6 @@ db = firestore.client()
 
 
 @app.route('/', methods=['GET', 'POST'])
-@app.route("/index")
-def index():
-    from google.cloud import firestore
-    docs = db.collection(u'users').order_by(
-        u'createdAt', direction=firestore.Query.DESCENDING).stream()
-    return render_template('index.html', docs=docs)
-
-
 @app.route("/login", methods=['POST', 'GET'])
 def login():
     if request.method == "POST":
