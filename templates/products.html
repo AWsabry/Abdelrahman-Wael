@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Products Table</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="shortcut icon" href="{{ url_for('static', filename='images/logo.png') }}">
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">	
+	</head>
+	<header>
+	
+	<br>
+	<div>
+	<center class="tab">
+	<a href="users" class="btn btn-success">Users</a>
+	<a href="orders" class="btn btn-danger">Orders</a>
+	<a href="#" class="btn btn-warning">Products</a>
+	<a href="sales" class="btn btn-success">Sales</a>
+	</center>
+	</div>
+	
+	
+    </header>
+
+	<body>
+	</div>
+	<section class="ftco-section">
+		<div class="container">
+        <td><a href="addProduct" class="btn btn-success">AddProduct</a></td>
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">Products Table</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="table-wrap">
+						<table class="table table-striped">
+						  <thead>
+						    <tr>
+							<th>Product Category</th>
+						      <th>Product Name</th>
+						      <th>Product Price</th>
+						      <th>Product Description</th>
+						      <th>Product ID</th>
+							  <th>Delete</th>
+							  
+							 
+						    </tr>
+						  </thead>
+						  {% for doc in docs %}
+						  <tbody>
+						    <tr>
+							<td class="cell100 column1">{{doc.to_dict().category}}</td>
+						     <td class="cell100 column1">{{doc.to_dict().name}}</td>
+							 <td class="cell100 column1">{{doc.to_dict().price}}</td>
+							 <td class="cell100 column1">{{doc.to_dict().description}}</td>
+							 <td class="cell100 column1">{{doc.to_dict().id}}</td>
+							 <td class="cell100 column1"> <button type="delete" name = 'delete' id="delete" class="btn btn-danger"> Delete </button> </td>                   
+							 <td> </td>
+						    </tr>
+							{% endfor %}
+						  </tbody>
+						  
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="js/jquery.min.js"></script>
+	
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+
+	</body>
+</html>
+

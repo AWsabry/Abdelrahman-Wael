@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  	<title>Login Admin</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/logo.png') }}">
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">	
+	</head>
+  <br>
+  <body>
+    <div class="container">
+  <form action="/login"  method="post" class="contact-form webform" enctype="multipart/form-data" data-aos="fade-up" data-aos-delay="400" role="form">
+                    <h6 class="heading-small text-muted mb-4">Sign IN</h6>
+                      <div>
+                    <label class="form-control-label" for="salesName">Email</label>
+                    <input type="text" id="email" name="email" class="form-control" placeholder="Email" required >
+                      <div>
+                    <label class="form-control-label" for="password">Password</label>
+                    <input type="Password" id="password" name="password" class="form-control" placeholder="Password" required >
+                    <br>
+                    <div>  
+                    <button type="submit" id="submit-button" class="btn btn-primary">Login</button>                    
+                      </div>
+          </form>
+          </div>
+          
+	<script src="js/jquery.min.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+  </body>
+
+</html>
+
+ 

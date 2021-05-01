@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Users Table</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="shortcut icon" href="{{ url_for('static', filename='images/logo.png') }}">
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">	
+	</head>
+	<header>
+	
+	<br>
+	<div>
+	<center class="tab">
+	<a href="#" class="btn btn-success">Users</a>
+	<a href="orders" class="btn btn-danger">Orders</a>
+	<a href="products" class="btn btn-warning">Products</a>
+	<a href="sales" class="btn btn-success">Sales</a>
+	</center>
+	</div>
+    </header>
+
+	<body>
+	</div>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">Users Table</h2>
+				</div>
+				
+			</div>
+			
+			<div class="row">
+				<div class="col-md-12">
+					<div class="table-wrap">
+						<table class="table table-striped">
+						  <thead>
+						    <tr>
+						      <th>Email</th>
+						      <th>FirstName</th>
+						      <th>LastName</th>
+						      <th>PhoneNumber</th>
+						      <th>Address</th>
+								<th>UserId</th>
+							  <th>UserPassword</th>
+							 
+						    </tr>
+						  </thead>
+						  {% for doc in docs %}
+						  <tbody>
+						    <tr>
+						     <td class="cell100 column1">{{doc.to_dict().email}}</td>
+							 <td class="cell100 column1">{{doc.to_dict().firstName}}</td>
+							 <td class="cell100 column1">{{doc.to_dict().lastName}}</td>
+							 <td class="cell100 column1">{{doc.to_dict().phoneNumber}}</td>
+							 <td class="cell100 column1">{{doc.to_dict().city}}</td>
+							 <td class="cell100 column1">{{doc.to_dict().uid}}</td>
+							 <td class="cell100 column1">{{doc.to_dict().password}}</td>
+						    </tr>
+							{% endfor %}
+						  </tbody>
+						  
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="js/jquery.min.js"></script>
+	
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+
+	</body>
+</html>
+

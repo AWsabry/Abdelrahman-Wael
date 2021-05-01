@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Sales Orders Table</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="shortcut icon" href="{{ url_for('static', filename='images/logo.png') }}">
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">	
+	</head>
+	<header>	
+	<br>
+	<div>
+	<center class="tab">
+	<a href="users" class="btn btn-success">Users</a>
+	<a href="orders" class="btn btn-danger">Orders</a>
+	<a href="products" class="btn btn-warning">Products</a>
+	<a href="sales" class="btn btn-success">Sales</a>
+	</center>
+	</div>
+    </header>
+	<body>
+
+	<br><br><br>
+	 <div class="container">
+  <form action="/salesOrders"  method="post" class="contact-form webform" enctype="multipart/form-data" data-aos="fade-up" data-aos-delay="400" role="form">
+  <label class="form-control-label" for="salesEmail">Sales Email</label>
+	<input type="salesEmail" name="salesEmail" id="salesEmail" class="form-control" placeholder="Enter Sales Email" required>
+<br><br>
+	<div>
+                    <button type="submit" id="submit-button" class="btn btn-primary">Find Sales Orders</button>                    
+                      </div>  
+	</div>
+	</form>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">Sales Orders Table</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="table-wrap">
+						<table class="table table-striped">
+						  <thead>
+						    <tr>
+                            <th>Sales Email</th>
+						      <th>Sales ID</th>
+							  <th>Sales Full Name</th>
+						      <th>Customer Name</th>
+							  <th>Customer Mob.</th>
+							<th>Customer Email</th>
+							<th>Customer Address</th>
+							  <th> Total Order Price</th>
+							  <th> Status</th>							 
+                              
+						    </tr>
+						  </thead>
+						  {% for doc in docs %}
+						  <tbody>
+						    <tr>
+                            <td class="cell100 column1">{{doc.to_dict().Email}}</td>
+						     <td class="cell100 column1">{{doc.to_dict().ID}}</td>
+							 <td class="cell100 column1">{{doc.to_dict().SalesName}}</td>
+							 <td class="cell100 column1">{{doc.to_dict().CustomerFullName}}</td>
+							 <td class="cell100 column1">{{doc.to_dict().CustomerMob}}</td>
+							 <td class="cell100 column1">{{doc.to_dict().CustomerEmail}}</td>
+							 <td class="cell100 column1">{{doc.to_dict().CustomerAddress}}</td>
+							 <td class="cell100 column1">{{doc.to_dict().totalPrice}}</td>
+							 <td class="cell100 column1">{{doc.to_dict().Status}}</td>
+							 <td><a href="#" class="btn btn-success">Change Status</a></td>
+                             
+						    </tr>
+							{% endfor %}
+						  </tbody>
+						  
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="js/jquery.min.js"></script>
+	
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+
+	</body>
+</html>
+

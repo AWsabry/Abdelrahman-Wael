@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  	<title>Add Sales</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/logo.png') }}">
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">	
+	</head>
+  <br>
+  <div>
+	<center class="tab">
+	<a href="users" class="btn btn-success">Users</a>
+	<a href="orders" class="btn btn-danger">Orders</a>
+	<a href="products" class="btn btn-warning">Products</a>
+  <a href="sales" class="btn btn-success">Sales</a>
+	</center>
+   <div class="container">
+  <a href="#"> <img src="{{ url_for('static', filename='images/logo.png') }}" alt="ForTech" width="200" height="160"> </a>
+	</div>
+  <body>
+ 
+<br><br>
+    <div class="container">
+  <form action="/addSales"  method="post" class="contact-form webform" enctype="multipart/form-data" data-aos="fade-up" data-aos-delay="400" role="form">
+                    <h6 class="heading-small text-muted mb-4">Add your Sales</h6>
+                      <div>
+                    <label class="form-control-label" for="salesName">Sales Name</label>
+                    <input type="text" id="salesName" name="salesName" class="form-control" placeholder="Sales Name" required >
+
+                    <label class="form-control-label" for="salesEmail">Sales Email</label>
+                    <input type="Email" name="salesEmail" id="salesEmail" class="form-control" placeholder="Sales Email" required>
+                    <br>
+                    <label class="form-control-label" for="salesPassword">Sales Password (Min 8 characters)</label>
+                    <input type="Password" name="salesPassword" id="salesPassword" class="form-control" placeholder="Sales Password (Min 8 characters)" required>
+                    <br>
+                    <label class="form-control-label" for="salesNationalId">Sales National Id</label>
+                    <input type="floatformat" name="salesNationalId" id="salesNationalId" class="form-control" placeholder="National ID" required>
+                    </div>
+                    <br>
+                    <label class="form-control-label" for="salesPhoneNumber">Sales PhoneNumber</label>
+                    <input type="floatformat" name="salesPhoneNumber" id="salesPhoneNumber" class="form-control" placeholder="Sales PhoneNumber" required>
+                  <br>
+                  <div>
+                    <label class="form-control-label" for="salesGender">Sales Gender</label>
+                    <input type="floatformat" name="salesGender" id="salesGender" class="form-control" placeholder="Sales Gender" required>
+                  </div>
+                  <br>
+                  <div>
+                    <label class="form-control-label" for="salesPercentage">Sales Commission</label>
+                    <input type="floatformat" name="salesPercentage" id="salesPercentage" class="form-control" placeholder="Sales Commission" required>
+                  </div>
+                  <br>
+                   <div>
+                    <label class="form-control-label" for="salesAddress">Sales Address</label>
+                    <input type="floatformat" name="salesAddress" id="salesAddress" class="form-control" placeholder="Sales Address" required>
+                  </div>
+                  <br>
+                    <button type="submit" id="submit-button" class="btn btn-primary">Save</button>                    
+                      </div>  
+                      <br><br><br>
+          </form>
+          </div>
+          
+	<script src="js/jquery.min.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+  </body>
+
+</html>
+
+ 
