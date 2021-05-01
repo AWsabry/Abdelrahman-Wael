@@ -55,6 +55,14 @@ def users():
     return render_template('users.html', docs=docs)
 
 
+@app.route("/index")
+def index():
+    from google.cloud import firestore
+    docs = db.collection(u'users').order_by(
+        u'createdAt', direction=firestore.Query.DESCENDING).stream()
+    return render_template('index.html', docs=docs)
+
+
 @app.route("/orders")
 def orders():
     from google.cloud import firestore
